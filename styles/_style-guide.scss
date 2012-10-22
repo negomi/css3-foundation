@@ -37,6 +37,61 @@
     {
       margin-top: $body-text-line-height / 2;
     }
+
+    .show
+    {
+      $tab-height-inner: $body-text-line-height + 2 * $vertical-nudge;
+      $tab-height: $tab-height-inner + 2px;
+      $tab-width: 125px;
+
+      position: relative;
+      margin-top: $body-text-line-height;
+      padding-top: $tab-height - 1px;
+      overflow: visible;
+
+      &:before
+      {
+        display: inline-block;
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        border: 1px solid $light-stroke;
+        padding: $vertical-nudge $column-width / 2;
+        width: $tab-width;
+        background: white;
+        font-family: $body-text-family;
+        font-weight: bold;
+      }
+
+      &.haml:before
+      {
+        content: 'source in haml';
+      }
+
+      &.html:before
+      {
+        content: 'source in html';
+      }
+
+      .show-code
+      {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: $tab-width + 1.5 * $column-width;
+        height: $tab-height-inner;
+        line-height: $tab-height-inner;
+      }
+
+      pre
+      {
+        display: none;
+        margin: 0;
+        margin-top: -1px;
+        border: 1px solid $light-stroke;
+      }
+    }
   }
 
   .colors

@@ -232,40 +232,111 @@
           Check out the source for our recommendation on marking up tables in a readable, semantic manner.
         </div> <!-- /.explanation -->
         <div class="example">
-          <table>
-            <caption>Your order placed on 09/02/2011</caption>
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th class="quantity">Quantity</th>
-                <th class="price">Price</th>
-              </tr>
-            </thead>
-            <!-- Remember that tfoot comes before tbody! -->
-            <tfoot>
-              <tr class="total">
-                <th colspan="2">Total</th>
-                <th class="price">$47.02</th>
-              </tr>
-            </tfoot>
-            <tbody>
-              <tr>
-                <td>Widget</td>
-                <td class="quantity">1</td>
-                <td class="price">$15.02</td>
-              </tr>
-              <tr>
-                <td>Thingamabob</td>
-                <td class="quantity">5</td>
-                <td class="price">$3.00</td>
-              </tr>
-              <tr>
-                <td>Whatchamacallit</td>
-                <td class="quantity">2</td>
-                <td class="price">$8.50</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="rendered">
+            <table>
+              <caption>Your order placed on 09/02/2011</caption>
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th class="quantity">Quantity</th>
+                  <th class="price">Price</th>
+                </tr>
+              </thead>
+              <!-- Remember that tfoot comes before tbody! -->
+              <tfoot>
+                <tr class="total">
+                  <th colspan="2">Total</th>
+                  <th class="price">$47.02</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <td>Widget</td>
+                  <td class="quantity">1</td>
+                  <td class="price">$15.02</td>
+                </tr>
+                <tr>
+                  <td>Thingamabob</td>
+                  <td class="quantity">5</td>
+                  <td class="price">$3.00</td>
+                </tr>
+                <tr>
+                  <td>Whatchamacallit</td>
+                  <td class="quantity">2</td>
+                  <td class="price">$8.50</td>
+                </tr>
+              </tbody>
+            </table>
+          </div> <!-- /.rendered -->
+          <div class="show html">
+            <a class="show-code" href="javascript:;">show</a>
+            <pre>
+&lt;table&gt;
+  &lt;caption&gt;Your order placed on 09/02/2011&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Item&lt;/th&gt;
+      &lt;th class=&quot;quantity&quot;&gt;Quantity&lt;/th&gt;
+      &lt;th class=&quot;price&quot;&gt;Price&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;!-- Remember that tfoot comes before tbody! --&gt;
+  &lt;tfoot&gt;
+    &lt;tr class=&quot;total&quot;&gt;
+      &lt;th colspan=&quot;2&quot;&gt;Total&lt;/th&gt;
+      &lt;th class=&quot;price&quot;&gt;$47.02&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Widget&lt;/td&gt;
+      &lt;td class=&quot;quantity&quot;&gt;1&lt;/td&gt;
+      &lt;td class=&quot;price&quot;&gt;$15.02&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Thingamabob&lt;/td&gt;
+      &lt;td class=&quot;quantity&quot;&gt;5&lt;/td&gt;
+      &lt;td class=&quot;price&quot;&gt;$3.00&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Whatchamacallit&lt;/td&gt;
+      &lt;td class=&quot;quantity&quot;&gt;2&lt;/td&gt;
+      &lt;td class=&quot;price&quot;&gt;$8.50&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+            </pre>
+          </div> <!-- /.show -->
+          <div class="show haml">
+            <a class="show-code" href="javascript:;">show</a>
+            <pre>
+%table
+  %caption Your order placed on 09/02/2011
+  %thead
+    %tr
+      %th Item
+      %th.quantity Quantity
+      %th.price Price
+  / Remember that tfoot comes before tbody!
+  %tfoot
+    %tr.total
+      %th{:colspan => "2"} Total
+      %th.price $47.02
+  %tbody
+    %tr
+      %td Widget
+      %td.quantity 1
+      %td.price $15.02
+    %tr
+      %td Thingamabob
+      %td.quantity 5
+      %td.price $3.00
+    %tr
+      %td Whatchamacallit
+      %td.quantity 2
+      %td.price $8.50
+            </pre>
+          </div> <!-- /.show -->
         </div> <!-- /.example -->
       </section> <!-- /.tables -->
 
@@ -277,202 +348,549 @@
           <p>Note how destructive actions like deletion are marked with a class of <code>"destructive"</code> and highlighted visually.</p>
         </div> <!-- /.explanation -->
         <div class="example">
-          <form action="." method="get" accept-charset="utf-8">
-            <table class="form">
-              <tfoot>
-                <tr>
-                  <th class="field-label">&nbsp;</th>
-                  <td class="button-bar">
-                    <input type="submit" class="save" value="Save"/>
-                    <input type="submit" disabled="disabled" class="save-and-new" value="Save + new"/>
-                    <input type="submit" class="destructive delete" value="Delete"/>
-                    <a class="cancel" href="javascript:;">Cancel</a>
-                  </td>
-                </tr>
-              </tfoot>
-              <tbody>
-                <tr class="section-heading">
-                  <th>&nbsp;</th>
-                  <th>Form section heading</th>
-                </tr>
-                <tr>
-                  <th class="field-label">
-                    <label for="text-input-example-1">Text input</label>
-                  </th>
-                  <td class="field">
-                    <input type="text" name="text-input-example" value="" id="text-input-example-1" class="large"/>
-                    <p class="form-help">
-                      Field help text
-                    </p> <!-- /.form-help -->
-                  </td>
-                </tr>
-                <tr>
-                  <th class="field-label">
-                    <label for="disabled-text-input-example-1">Disabled text input</label>
-                  </th>
-                  <td class="field">
-                    <input type="text" disabled="disabled" name="disabled-text-input-example" value="Johannes Brahms" id="disabled-text-input-example-1"/>
-                  </td>
-                </tr>
-                <tr>
-                  <th class="field-label">
-                    <label for="select-example-1">Select</label>
-                  </th>
-                  <td class="field">
-                    <select name="select-example" id="select-example-1">
-                      <option value="">Choose one</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                    </select>
-                  </td>
-                </tr>
-                <tr class="error">
-                  <th class="field-label">
-                    <label for="invalid-text-input-example-1">Invalid input</label>
-                  </th>
-                  <td class="field">
-                    <input type="text" name="invalid-text-input-example" value="" id="invalid-text-input-example-1"/>
-                    <span class="form-help">inline help text</span>
-                    <ul class="error-explanation">
-                      <li>Please enter an email address</li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr class="radio-group">
-                  <th class="field-label">
-                    <label>Radio group</label>
-                  </th>
-                  <td class="field">
-                    <label>
-                      <input type="radio" name="radio-group-example" value="choice-1"/>
-                      Choice 1
-                    </label>
-                    <label>
-                      <input type="radio" name="radio-group-example" value="choice-2"/>
-                      Choice 2
-                    </label>
-                    <label>
-                      <input type="radio" name="radio-group-example" value="choice-3"/>
-                      Choice 3
-                    </label>
-                  </td>
-                </tr>
-                <tr class="checkbox-group">
-                  <th class="field-label">
-                    <label>Checkbox group</label>
-                  </th>
-                  <td class="field">
-                    <label>
-                      <input type="checkbox" name="checkbox-group-example" value="choice-1"/>
-                      Longer choice 1
-                    </label>
-                    <label>
-                      <input type="checkbox" name="checkbox-group-example" value="choice-2"/>
-                      Longer choice 2
-                    </label>
-                    <label>
-                      <input type="checkbox" name="checkbox-group-example" value="choice-3"/>
-                      Longer choice 3
-                    </label>
-                  </td>
-                </tr>
-                <tr>
-                  <th class="field-label">
-                    <label for="textarea-example-1">Textarea</label>
-                  </th>
-                  <td class="field">
-                    <textarea name="textarea-example" id="textarea-example-1" rows="5" cols="40"></textarea>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </form>
+          <div class="rendered">
+            <form action="." method="get" accept-charset="utf-8">
+              <table class="form">
+                <tfoot>
+                  <tr>
+                    <th class="field-label">&nbsp;</th>
+                    <td class="button-bar">
+                      <input type="submit" class="save" value="Save"/>
+                      <input type="submit" disabled="disabled" class="save-and-new" value="Save + new"/>
+                      <input type="submit" class="destructive delete" value="Delete"/>
+                      <a class="cancel" href="javascript:;">Cancel</a>
+                    </td>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr class="section-heading">
+                    <th>&nbsp;</th>
+                    <th>Form section heading</th>
+                  </tr>
+                  <tr>
+                    <th class="field-label">
+                      <label for="text-input-example-1">Text input</label>
+                    </th>
+                    <td class="field">
+                      <input type="text" name="text-input-example" value="" id="text-input-example-1" class="large"/>
+                      <p class="form-help">
+                        Field help text
+                      </p> <!-- /.form-help -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="field-label">
+                      <label for="disabled-text-input-example-1">Disabled text input</label>
+                    </th>
+                    <td class="field">
+                      <input type="text" disabled="disabled" name="disabled-text-input-example" value="Johannes Brahms" id="disabled-text-input-example-1"/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="field-label">
+                      <label for="select-example-1">Select</label>
+                    </th>
+                    <td class="field">
+                      <select name="select-example" id="select-example-1">
+                        <option value="">Choose one</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr class="error">
+                    <th class="field-label">
+                      <label for="invalid-text-input-example-1">Invalid input</label>
+                    </th>
+                    <td class="field">
+                      <input type="text" name="invalid-text-input-example" value="" id="invalid-text-input-example-1"/>
+                      <span class="form-help">inline help text</span>
+                      <ul class="error-explanation">
+                        <li>Please enter an email address</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr class="radio-group">
+                    <th class="field-label">
+                      <label>Radio group</label>
+                    </th>
+                    <td class="field">
+                      <label>
+                        <input type="radio" name="radio-group-example" value="choice-1"/>
+                        Choice 1
+                      </label>
+                      <label>
+                        <input type="radio" name="radio-group-example" value="choice-2"/>
+                        Choice 2
+                      </label>
+                      <label>
+                        <input type="radio" name="radio-group-example" value="choice-3"/>
+                        Choice 3
+                      </label>
+                    </td>
+                  </tr>
+                  <tr class="checkbox-group">
+                    <th class="field-label">
+                      <label>Checkbox group</label>
+                    </th>
+                    <td class="field">
+                      <label>
+                        <input type="checkbox" name="checkbox-group-example" value="choice-1"/>
+                        Longer choice 1
+                      </label>
+                      <label>
+                        <input type="checkbox" name="checkbox-group-example" value="choice-2"/>
+                        Longer choice 2
+                      </label>
+                      <label>
+                        <input type="checkbox" name="checkbox-group-example" value="choice-3"/>
+                        Longer choice 3
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="field-label">
+                      <label for="textarea-example-1">Textarea</label>
+                    </th>
+                    <td class="field">
+                      <textarea name="textarea-example" id="textarea-example-1" rows="5" cols="40"></textarea>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div> <!-- /.rendered -->
+          <div class="show html">
+            <a class="show-code" href="javascript:;">show</a>
+            <pre>
+&lt;form action=&quot;.&quot; method=&quot;get&quot; accept-charset=&quot;utf-8&quot;&gt;
+  &lt;table class=&quot;form&quot;&gt;
+    &lt;tfoot&gt;
+      &lt;tr&gt;
+        &lt;th class=&quot;field-label&quot;&gt;&amp;nbsp;&lt;/th&gt;
+        &lt;td class=&quot;button-bar&quot;&gt;
+          &lt;input type=&quot;submit&quot; class=&quot;save&quot; value=&quot;Save&quot;/&gt;
+          &lt;input type=&quot;submit&quot; disabled=&quot;disabled&quot; class=&quot;save-and-new&quot; value=&quot;Save + new&quot;/&gt;
+          &lt;input type=&quot;submit&quot; class=&quot;destructive delete&quot; value=&quot;Delete&quot;/&gt;
+          &lt;a class=&quot;cancel&quot; href=&quot;javascript:;&quot;&gt;Cancel&lt;/a&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tfoot&gt;
+    &lt;tbody&gt;
+      &lt;tr class=&quot;section-heading&quot;&gt;
+        &lt;th&gt;&amp;nbsp;&lt;/th&gt;
+        &lt;th&gt;Form section heading&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;th class=&quot;field-label&quot;&gt;
+          &lt;label for=&quot;text-input-example-1&quot;&gt;Text input&lt;/label&gt;
+        &lt;/th&gt;
+        &lt;td class=&quot;field&quot;&gt;
+          &lt;input type=&quot;text&quot; name=&quot;text-input-example&quot; value=&quot;&quot; id=&quot;text-input-example-1&quot; class=&quot;large&quot;/&gt;
+          &lt;p class=&quot;form-help&quot;&gt;
+            Field help text
+          &lt;/p&gt; &lt;!-- /.form-help --&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;th class=&quot;field-label&quot;&gt;
+          &lt;label for=&quot;disabled-text-input-example-1&quot;&gt;Disabled text input&lt;/label&gt;
+        &lt;/th&gt;
+        &lt;td class=&quot;field&quot;&gt;
+          &lt;input type=&quot;text&quot; disabled=&quot;disabled&quot; name=&quot;disabled-text-input-example&quot; value=&quot;Johannes Brahms&quot; id=&quot;disabled-text-input-example-1&quot;/&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;th class=&quot;field-label&quot;&gt;
+          &lt;label for=&quot;select-example-1&quot;&gt;Select&lt;/label&gt;
+        &lt;/th&gt;
+        &lt;td class=&quot;field&quot;&gt;
+          &lt;select name=&quot;select-example&quot; id=&quot;select-example-1&quot;&gt;
+            &lt;option value=&quot;&quot;&gt;Choose one&lt;/option&gt;
+            &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+            &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+            &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+            &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+            &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr class=&quot;error&quot;&gt;
+        &lt;th class=&quot;field-label&quot;&gt;
+          &lt;label for=&quot;invalid-text-input-example-1&quot;&gt;Invalid input&lt;/label&gt;
+        &lt;/th&gt;
+        &lt;td class=&quot;field&quot;&gt;
+          &lt;input type=&quot;text&quot; name=&quot;invalid-text-input-example&quot; value=&quot;&quot; id=&quot;invalid-text-input-example-1&quot;/&gt;
+          &lt;span class=&quot;form-help&quot;&gt;inline help text&lt;/span&gt;
+          &lt;ul class=&quot;error-explanation&quot;&gt;
+            &lt;li&gt;Please enter an email address&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr class=&quot;radio-group&quot;&gt;
+        &lt;th class=&quot;field-label&quot;&gt;
+          &lt;label&gt;Radio group&lt;/label&gt;
+        &lt;/th&gt;
+        &lt;td class=&quot;field&quot;&gt;
+          &lt;label&gt;
+            &lt;input type=&quot;radio&quot; name=&quot;radio-group-example&quot; value=&quot;choice-1&quot;/&gt;
+            Choice 1
+          &lt;/label&gt;
+          &lt;label&gt;
+            &lt;input type=&quot;radio&quot; name=&quot;radio-group-example&quot; value=&quot;choice-2&quot;/&gt;
+            Choice 2
+          &lt;/label&gt;
+          &lt;label&gt;
+            &lt;input type=&quot;radio&quot; name=&quot;radio-group-example&quot; value=&quot;choice-3&quot;/&gt;
+            Choice 3
+          &lt;/label&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr class=&quot;checkbox-group&quot;&gt;
+        &lt;th class=&quot;field-label&quot;&gt;
+          &lt;label&gt;Checkbox group&lt;/label&gt;
+        &lt;/th&gt;
+        &lt;td class=&quot;field&quot;&gt;
+          &lt;label&gt;
+            &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-group-example&quot; value=&quot;choice-1&quot;/&gt;
+            Longer choice 1
+          &lt;/label&gt;
+          &lt;label&gt;
+            &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-group-example&quot; value=&quot;choice-2&quot;/&gt;
+            Longer choice 2
+          &lt;/label&gt;
+          &lt;label&gt;
+            &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-group-example&quot; value=&quot;choice-3&quot;/&gt;
+            Longer choice 3
+          &lt;/label&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;th class=&quot;field-label&quot;&gt;
+          &lt;label for=&quot;textarea-example-1&quot;&gt;Textarea&lt;/label&gt;
+        &lt;/th&gt;
+        &lt;td class=&quot;field&quot;&gt;
+          &lt;textarea name=&quot;textarea-example&quot; id=&quot;textarea-example-1&quot; rows=&quot;5&quot; cols=&quot;40&quot;&gt;&lt;/textarea&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/form&gt;
+            </pre>
+          </div> <!-- /.show -->
+          <div class="show haml">
+            <a class="show-code" href="javascript:;">show</a>
+            <pre>
+%form{"accept-charset" => "utf-8", :action => ".", :method => "get"}
+  %table.form
+    %tfoot
+      %tr
+        %th.field-label  
+        %td.button-bar
+          %input.save{:type => "submit", :value => "Save"}/
+          %input.save-and-new{:disabled => "disabled", :type => "submit", :value => "Save + new"}/
+          %input.destructive.delete{:type => "submit", :value => "Delete"}/
+          %a.cancel{:href => "javascript:;"} Cancel
+    %tbody
+      %tr.section-heading
+        %th  
+        %th Form section heading
+      %tr
+        %th.field-label
+          %label{:for => "text-input-example-1"} Text input
+        %td.field
+          %input#text-input-example-1.large{:name => "text-input-example", :type => "text", :value => ""}/
+          %p.form-help
+            Field help text
+          / /.form-help
+      %tr
+        %th.field-label
+          %label{:for => "disabled-text-input-example-1"} Disabled text input
+        %td.field
+          %input#disabled-text-input-example-1{:disabled => "disabled", :name => "disabled-text-input-example", :type => "text", :value => "Johannes Brahms"}/
+      %tr
+        %th.field-label
+          %label{:for => "select-example-1"} Select
+        %td.field
+          %select#select-example-1{:name => "select-example"}
+            %option{:value => ""} Choose one
+            %option{:value => "1"} 1
+            %option{:value => "2"} 2
+            %option{:value => "3"} 3
+            %option{:value => "4"} 4
+            %option{:value => "5"} 5
+      %tr.error
+        %th.field-label
+          %label{:for => "invalid-text-input-example-1"} Invalid input
+        %td.field
+          %input#invalid-text-input-example-1{:name => "invalid-text-input-example", :type => "text", :value => ""}/
+          %span.form-help inline help text
+          %ul.error-explanation
+            %li Please enter an email address
+      %tr.radio-group
+        %th.field-label
+          %label Radio group
+        %td.field
+          %label
+            %input{:name => "radio-group-example", :type => "radio", :value => "choice-1"}/
+            Choice 1
+          %label
+            %input{:name => "radio-group-example", :type => "radio", :value => "choice-2"}/
+            Choice 2
+          %label
+            %input{:name => "radio-group-example", :type => "radio", :value => "choice-3"}/
+            Choice 3
+      %tr.checkbox-group
+        %th.field-label
+          %label Checkbox group
+        %td.field
+          %label
+            %input{:name => "checkbox-group-example", :type => "checkbox", :value => "choice-1"}/
+            Longer choice 1
+          %label
+            %input{:name => "checkbox-group-example", :type => "checkbox", :value => "choice-2"}/
+            Longer choice 2
+          %label
+            %input{:name => "checkbox-group-example", :type => "checkbox", :value => "choice-3"}/
+            Longer choice 3
+      %tr
+        %th.field-label
+          %label{:for => "textarea-example-1"} Textarea
+        %td.field
+          %textarea#textarea-example-1{:cols => "40", :name => "textarea-example", :rows => "5"}            </pre>
+          </div> <!-- /.show -->
         </div> <!-- /.example -->
         <div class="explanation">
           <h2>Stacked forms</h2>
           <p>Top-aligned form labels tend to reduce form-completion times the most and are best used when the data being requested is well-known to the user and requires minimum thought. Top-aligned labels should also be used for mobile applications.</p>
         </div> <!-- /.explanation -->
         <div class="example">
-          <form action="." method="get" accept-charset="utf-8">
-            <fieldset class="stacked">
-              <legend class="section-heading">
-                Form section heading
-              </legend>
-              <div class="field">
-                <label for="text-input-example-2">Text input</label>
-                <input type="text" name="text-input-example" value="" id="text-input-example-2" class="large"/>
-                <p class="form-help">
-                  Field help text
-                </p> <!-- /.form-help -->
-              </div> <!-- /.field -->
-              <div class="field">
-                <label for="disabled-text-input-example-2">Disabled text input</label>
-                <input type="text" disabled="disabled" name="disabled-text-input-example" value="Johannes Brahms" id="disabled-text-input-example-2"/>
-              </div> <!-- /.field -->
-              <div class="field">
-                <label for="select-example-2">Select</label>
-                <select name="select-example" id="select-example-2">
-                  <option value="">Choose one</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </div> <!-- /.field -->
-              <div class="field error">
-                <label for="invalid-text-input-example-2">Invalid input</label>
-                <input type="text" name="invalid-text-input-example" value="" id="invalid-text-input-example-2"/>
-                <span class="form-help">inline help text</span>
-                <ul class="error-explanation">
-                  <li>Please enter an email address</li>
-                </ul>
-              </div> <!-- /.field -->
-              <div class="field radio-group">
-                <label>Radio group</label>
-                <label>
-                  <input type="radio" name="radio-group-example" value="choice-1"/>
-                  Choice 1
-                </label>
-                <label>
-                  <input type="radio" name="radio-group-example" value="choice-2"/>
-                  Choice 2
-                </label>
-                <label>
-                  <input type="radio" name="radio-group-example" value="choice-3"/>
-                  Choice 3
-                </label>
-              </div> <!-- /.field -->
-              <div class="field checkbox-group">
-                <label>Checkbox group</label>
-                <label>
-                  <input type="checkbox" name="checkbox-group-example" value="choice-1"/>
-                  Longer choice 1
-                </label>
-                <label>
-                  <input type="checkbox" name="checkbox-group-example" value="choice-2"/>
-                  Longer choice 2
-                </label>
-                <label>
-                  <input type="checkbox" name="checkbox-group-example" value="choice-3"/>
-                  Longer choice 3
-                </label>
-              </div> <!-- /.field -->
-              <div class="field">
-                <label for="textarea-example-2">Textarea</label>
-                <textarea name="textarea-example" id="textarea-example-2" rows="5" cols="40"></textarea>
-              </div> <!-- /.field -->
-              <div class="button-bar group">
-                <input type="submit" class="save" value="Save"/>
-                <input type="submit" disabled="disabled" class="save-and-new" value="Save + new"/>
-                <input type="submit" class="destructive delete" value="Delete"/>
-                <a class="cancel" href="javascript:;">Cancel</a>
-              </div>
-            </fieldset>
-          </form>
+          <div class="rendered">
+            <form action="." method="get" accept-charset="utf-8">
+              <fieldset class="stacked">
+                <legend class="section-heading">
+                  Form section heading
+                </legend>
+                <div class="field">
+                  <label for="text-input-example-2">Text input</label>
+                  <input type="text" name="text-input-example" value="" id="text-input-example-2" class="large"/>
+                  <p class="form-help">
+                    Field help text
+                  </p> <!-- /.form-help -->
+                </div> <!-- /.field -->
+                <div class="field">
+                  <label for="disabled-text-input-example-2">Disabled text input</label>
+                  <input type="text" disabled="disabled" name="disabled-text-input-example" value="Johannes Brahms" id="disabled-text-input-example-2"/>
+                </div> <!-- /.field -->
+                <div class="field">
+                  <label for="select-example-2">Select</label>
+                  <select name="select-example" id="select-example-2">
+                    <option value="">Choose one</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div> <!-- /.field -->
+                <div class="field error">
+                  <label for="invalid-text-input-example-2">Invalid input</label>
+                  <input type="text" name="invalid-text-input-example" value="" id="invalid-text-input-example-2"/>
+                  <span class="form-help">inline help text</span>
+                  <ul class="error-explanation">
+                    <li>Please enter an email address</li>
+                  </ul>
+                </div> <!-- /.field -->
+                <div class="field radio-group">
+                  <label>Radio group</label>
+                  <label>
+                    <input type="radio" name="radio-group-example" value="choice-1"/>
+                    Choice 1
+                  </label>
+                  <label>
+                    <input type="radio" name="radio-group-example" value="choice-2"/>
+                    Choice 2
+                  </label>
+                  <label>
+                    <input type="radio" name="radio-group-example" value="choice-3"/>
+                    Choice 3
+                  </label>
+                </div> <!-- /.field -->
+                <div class="field checkbox-group">
+                  <label>Checkbox group</label>
+                  <label>
+                    <input type="checkbox" name="checkbox-group-example" value="choice-1"/>
+                    Longer choice 1
+                  </label>
+                  <label>
+                    <input type="checkbox" name="checkbox-group-example" value="choice-2"/>
+                    Longer choice 2
+                  </label>
+                  <label>
+                    <input type="checkbox" name="checkbox-group-example" value="choice-3"/>
+                    Longer choice 3
+                  </label>
+                </div> <!-- /.field -->
+                <div class="field">
+                  <label for="textarea-example-2">Textarea</label>
+                  <textarea name="textarea-example" id="textarea-example-2" rows="5" cols="40"></textarea>
+                </div> <!-- /.field -->
+                <div class="button-bar group">
+                  <input type="submit" class="save" value="Save"/>
+                  <input type="submit" disabled="disabled" class="save-and-new" value="Save + new"/>
+                  <input type="submit" class="destructive delete" value="Delete"/>
+                  <a class="cancel" href="javascript:;">Cancel</a>
+                </div>
+              </fieldset>
+            </form>
+          </div> <!-- /.rendered -->
+          <div class="show html">
+            <a class="show-code" href="javascript:;">show</a>
+            <pre>
+&lt;form action=&quot;.&quot; method=&quot;get&quot; accept-charset=&quot;utf-8&quot;&gt;
+  &lt;fieldset class=&quot;stacked&quot;&gt;
+    &lt;legend class=&quot;section-heading&quot;&gt;
+      Form section heading
+    &lt;/legend&gt;
+    &lt;div class=&quot;field&quot;&gt;
+      &lt;label for=&quot;text-input-example-2&quot;&gt;Text input&lt;/label&gt;
+      &lt;input type=&quot;text&quot; name=&quot;text-input-example&quot; value=&quot;&quot; id=&quot;text-input-example-2&quot; class=&quot;large&quot;/&gt;
+      &lt;p class=&quot;form-help&quot;&gt;
+        Field help text
+      &lt;/p&gt; &lt;!-- /.form-help --&gt;
+    &lt;/div&gt; &lt;!-- /.field --&gt;
+    &lt;div class=&quot;field&quot;&gt;
+      &lt;label for=&quot;disabled-text-input-example-2&quot;&gt;Disabled text input&lt;/label&gt;
+      &lt;input type=&quot;text&quot; disabled=&quot;disabled&quot; name=&quot;disabled-text-input-example&quot; value=&quot;Johannes Brahms&quot; id=&quot;disabled-text-input-example-2&quot;/&gt;
+    &lt;/div&gt; &lt;!-- /.field --&gt;
+    &lt;div class=&quot;field&quot;&gt;
+      &lt;label for=&quot;select-example-2&quot;&gt;Select&lt;/label&gt;
+      &lt;select name=&quot;select-example&quot; id=&quot;select-example-2&quot;&gt;
+        &lt;option value=&quot;&quot;&gt;Choose one&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+        &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt; &lt;!-- /.field --&gt;
+    &lt;div class=&quot;field error&quot;&gt;
+      &lt;label for=&quot;invalid-text-input-example-2&quot;&gt;Invalid input&lt;/label&gt;
+      &lt;input type=&quot;text&quot; name=&quot;invalid-text-input-example&quot; value=&quot;&quot; id=&quot;invalid-text-input-example-2&quot;/&gt;
+      &lt;span class=&quot;form-help&quot;&gt;inline help text&lt;/span&gt;
+      &lt;ul class=&quot;error-explanation&quot;&gt;
+        &lt;li&gt;Please enter an email address&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt; &lt;!-- /.field --&gt;
+    &lt;div class=&quot;field radio-group&quot;&gt;
+      &lt;label&gt;Radio group&lt;/label&gt;
+      &lt;label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;radio-group-example&quot; value=&quot;choice-1&quot;/&gt;
+        Choice 1
+      &lt;/label&gt;
+      &lt;label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;radio-group-example&quot; value=&quot;choice-2&quot;/&gt;
+        Choice 2
+      &lt;/label&gt;
+      &lt;label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;radio-group-example&quot; value=&quot;choice-3&quot;/&gt;
+        Choice 3
+      &lt;/label&gt;
+    &lt;/div&gt; &lt;!-- /.field --&gt;
+    &lt;div class=&quot;field checkbox-group&quot;&gt;
+      &lt;label&gt;Checkbox group&lt;/label&gt;
+      &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-group-example&quot; value=&quot;choice-1&quot;/&gt;
+        Longer choice 1
+      &lt;/label&gt;
+      &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-group-example&quot; value=&quot;choice-2&quot;/&gt;
+        Longer choice 2
+      &lt;/label&gt;
+      &lt;label&gt;
+        &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-group-example&quot; value=&quot;choice-3&quot;/&gt;
+        Longer choice 3
+      &lt;/label&gt;
+    &lt;/div&gt; &lt;!-- /.field --&gt;
+    &lt;div class=&quot;field&quot;&gt;
+      &lt;label for=&quot;textarea-example-2&quot;&gt;Textarea&lt;/label&gt;
+      &lt;textarea name=&quot;textarea-example&quot; id=&quot;textarea-example-2&quot; rows=&quot;5&quot; cols=&quot;40&quot;&gt;&lt;/textarea&gt;
+    &lt;/div&gt; &lt;!-- /.field --&gt;
+    &lt;div class=&quot;button-bar group&quot;&gt;
+      &lt;input type=&quot;submit&quot; class=&quot;save&quot; value=&quot;Save&quot;/&gt;
+      &lt;input type=&quot;submit&quot; disabled=&quot;disabled&quot; class=&quot;save-and-new&quot; value=&quot;Save + new&quot;/&gt;
+      &lt;input type=&quot;submit&quot; class=&quot;destructive delete&quot; value=&quot;Delete&quot;/&gt;
+      &lt;a class=&quot;cancel&quot; href=&quot;javascript:;&quot;&gt;Cancel&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+            </pre>
+          </div> <!-- /.show -->
+          <div class="show haml">
+            <a class="show-code" href="javascript:;">show</a>
+            <pre>
+%form{"accept-charset" => "utf-8", :action => ".", :method => "get"}
+  %fieldset.stacked
+    %legend.section-heading
+      Form section heading
+    .field
+      %label{:for => "text-input-example-2"} Text input
+      %input#text-input-example-2.large{:name => "text-input-example", :type => "text", :value => ""}/
+      %p.form-help
+        Field help text
+    .field
+      %label{:for => "disabled-text-input-example-2"} Disabled text input
+      %input#disabled-text-input-example-2{:disabled => "disabled", :name => "disabled-text-input-example", :type => "text", :value => "Johannes Brahms"}/
+    .field
+      %label{:for => "select-example-2"} Select
+      %select#select-example-2{:name => "select-example"}
+        %option{:value => ""} Choose one
+        %option{:value => "1"} 1
+        %option{:value => "2"} 2
+        %option{:value => "3"} 3
+        %option{:value => "4"} 4
+        %option{:value => "5"} 5
+    .field.error
+      %label{:for => "invalid-text-input-example-2"} Invalid input
+      %input#invalid-text-input-example-2{:name => "invalid-text-input-example", :type => "text", :value => ""}/
+      %span.form-help inline help text
+      %ul.error-explanation
+        %li Please enter an email address
+    .field.radio-group
+      %label Radio group
+      %label
+        %input{:name => "radio-group-example", :type => "radio", :value => "choice-1"}/
+        Choice 1
+      %label
+        %input{:name => "radio-group-example", :type => "radio", :value => "choice-2"}/
+        Choice 2
+      %label
+        %input{:name => "radio-group-example", :type => "radio", :value => "choice-3"}/
+        Choice 3
+    .field.checkbox-group
+      %label Checkbox group
+      %label
+        %input{:name => "checkbox-group-example", :type => "checkbox", :value => "choice-1"}/
+        Longer choice 1
+      %label
+        %input{:name => "checkbox-group-example", :type => "checkbox", :value => "choice-2"}/
+        Longer choice 2
+      %label
+        %input{:name => "checkbox-group-example", :type => "checkbox", :value => "choice-3"}/
+        Longer choice 3
+    .field
+      %label{:for => "textarea-example-2"} Textarea
+      %textarea#textarea-example-2{:cols => "40", :name => "textarea-example", :rows => "5"}
+    .button-bar.group
+      %input.save{:type => "submit", :value => "Save"}/
+      %input.save-and-new{:disabled => "disabled", :type => "submit", :value => "Save + new"}/
+      %input.destructive.delete{:type => "submit", :value => "Delete"}/
+      %a.cancel{:href => "javascript:;"} Cancel
+            </pre>
+          </div> <!-- /.show -->
         </div> <!-- /.example -->
       </section> <!-- /.forms -->
 
@@ -482,42 +900,106 @@
           <p>Pagination styles should ensure that individual links are well spaced and large enough to be suitable touch targets.</p>
         </div> <!-- /.explanation -->
         <div class="example">
-          <nav class="pagination">
-            <span class="first">
-              <a href="javascript:;">&laquo; First</a>
-            </span>
+          <div class="rendered">
+            <nav class="pagination">
+              <span class="first">
+                <a href="javascript:;">&laquo; First</a>
+              </span>
 
-            <span class="prev">
-              <a href="javascript:;" rel="prev">&lsaquo; Prev</a>
-            </span>
+              <span class="prev">
+                <a href="javascript:;" rel="prev">&lsaquo; Prev</a>
+              </span>
 
-            <span class="page">
-              <a href="javascript:;" rel="prev">1</a>
-            </span>
+              <span class="page">
+                <a href="javascript:;" rel="prev">1</a>
+              </span>
 
-            <span class="page current">
-              2
-            </span>
+              <span class="page current">
+                2
+              </span>
 
-            <span class="page">
-              <a href="javascript:;" rel="next">3</a>
-            </span>
+              <span class="page">
+                <a href="javascript:;" rel="next">3</a>
+              </span>
 
-            <span class="page">
-              <a href="javascript:;">4</a>
-            </span>
+              <span class="page">
+                <a href="javascript:;">4</a>
+              </span>
 
-            <span class="page gap">...</span>
+              <span class="page gap">...</span>
 
-            <span class="next">
-              <a href="javascript:;" rel="next">Next &rsaquo;</a>
-            </span>
+              <span class="next">
+                <a href="javascript:;" rel="next">Next &rsaquo;</a>
+              </span>
 
-            <span class="last">
-              <a href="javascript:;">Last &raquo;</a>
-            </span>
+              <span class="last">
+                <a href="javascript:;">Last &raquo;</a>
+              </span>
+            </nav>
+          </div> <!-- /.rendered -->
+          <div class="show html">
+            <a class="show-code" href="javascript:;">show</a>
+            <pre>
+&lt;nav class=&quot;pagination&quot;&gt;
+  &lt;span class=&quot;first&quot;&gt;
+    &lt;a href=&quot;javascript:;&quot;&gt;&amp;laquo; First&lt;/a&gt;
+  &lt;/span&gt;
 
-          </nav>
+  &lt;span class=&quot;prev&quot;&gt;
+    &lt;a href=&quot;javascript:;&quot; rel=&quot;prev&quot;&gt;&amp;lsaquo; Prev&lt;/a&gt;
+  &lt;/span&gt;
+
+  &lt;span class=&quot;page&quot;&gt;
+    &lt;a href=&quot;javascript:;&quot; rel=&quot;prev&quot;&gt;1&lt;/a&gt;
+  &lt;/span&gt;
+
+  &lt;span class=&quot;page current&quot;&gt;
+    2
+  &lt;/span&gt;
+
+  &lt;span class=&quot;page&quot;&gt;
+    &lt;a href=&quot;javascript:;&quot; rel=&quot;next&quot;&gt;3&lt;/a&gt;
+  &lt;/span&gt;
+
+  &lt;span class=&quot;page&quot;&gt;
+    &lt;a href=&quot;javascript:;&quot;&gt;4&lt;/a&gt;
+  &lt;/span&gt;
+
+  &lt;span class=&quot;page gap&quot;&gt;...&lt;/span&gt;
+
+  &lt;span class=&quot;next&quot;&gt;
+    &lt;a href=&quot;javascript:;&quot; rel=&quot;next&quot;&gt;Next &amp;rsaquo;&lt;/a&gt;
+  &lt;/span&gt;
+
+  &lt;span class=&quot;last&quot;&gt;
+    &lt;a href=&quot;javascript:;&quot;&gt;Last &amp;raquo;&lt;/a&gt;
+  &lt;/span&gt;
+&lt;/nav&gt;
+            </pre>
+          </div> <!-- /.show -->
+          <div class="show haml">
+            <a class="show-code" href="javascript:;">show</a>
+            <pre>
+%nav.pagination
+  %span.first
+    %a{:href => "javascript:;"} « First
+  %span.prev
+    %a{:href => "javascript:;", :rel => "prev"} ‹ Prev
+  %span.page
+    %a{:href => "javascript:;", :rel => "prev"} 1
+  %span.page.current
+    2
+  %span.page
+    %a{:href => "javascript:;", :rel => "next"} 3
+  %span.page
+    %a{:href => "javascript:;"} 4
+  %span.page.gap ...
+  %span.next
+    %a{:href => "javascript:;", :rel => "next"} Next ›
+  %span.last
+    %a{:href => "javascript:;"} Last »
+            </pre>
+          </div> <!-- /.show -->
         </div> <!-- /.example -->
       </section> <!-- /.pagination -->
 
@@ -527,17 +1009,47 @@
           <p>Styles for alerts and messages. The icons are provided by <a href="http://www.famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">famfamfam</a>.</p>
         </div> <!-- /.explanation -->
         <div class="example">
-          <ul class="alerts">
-            <li class="message success">
-              Your profile was successfully saved.
-            </li>
-            <li class="message warning">
-              You have only 5MB of remaining free space.
-            </li>
-            <li class="message error">
-              Please correct the errors below.
-            </li>
-          </ul> <!-- /.alerts -->
+          <div class="rendered">
+            <ul class="alerts">
+              <li class="message success">
+                Your profile was successfully saved.
+              </li>
+              <li class="message warning">
+                You have only 5MB of remaining free space.
+              </li>
+              <li class="message error">
+                Please correct the errors below.
+              </li>
+            </ul> <!-- /.alerts -->
+          </div> <!-- /.rendered -->
+          <div class="show html">
+            <a class="show-code" href="javascript:;">show</a>
+            <pre>
+&lt;ul class=&quot;alerts&quot;&gt;
+  &lt;li class=&quot;message success&quot;&gt;
+    Your profile was successfully saved.
+  &lt;/li&gt;
+  &lt;li class=&quot;message warning&quot;&gt;
+    You have only 5MB of remaining free space.
+  &lt;/li&gt;
+  &lt;li class=&quot;message error&quot;&gt;
+    Please correct the errors below.
+  &lt;/li&gt;
+&lt;/ul&gt; &lt;!-- /.alerts --&gt;
+            </pre>
+          </div> <!-- /.show -->
+          <div class="show haml">
+            <a class="show-code" href="javascript:;">show</a>
+            <pre>
+%ul.alerts
+  %li.message.success
+    Your profile was successfully saved.
+  %li.message.warning
+    You have only 5MB of remaining free space.
+  %li.message.error
+    Please correct the errors below.
+            </pre>
+          </div> <!-- /.show -->
         </div> <!-- /.example -->
       </section> <!-- /.alerts -->
     </section> <!-- /#examples -->
@@ -580,6 +1092,19 @@
   (function($) {
     $(function() {
       FiftyfiveExample.commonInit();
+      $("a.show-code").click(function() {
+        var $this = $(this);
+        var $pre = $this.next("pre");
+        $pre.toggle();
+        if($pre.is(":visible"))
+        {
+          $this.text("hide");
+        }
+        else
+        {
+          $this.text("show");
+        }
+      });
     });
   })(jQuery);
   </script>
